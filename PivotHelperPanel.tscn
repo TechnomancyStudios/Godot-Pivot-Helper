@@ -14,7 +14,7 @@ __meta__ = {
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 129.0
-margin_bottom = 478.0
+margin_bottom = 502.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -95,6 +95,7 @@ text = "<"
 margin_left = 24.0
 margin_right = 98.0
 margin_bottom = 24.0
+max_value = 9999.0
 
 [node name="Next" type="Button" parent="VBoxContainer/SpriteControls2"]
 margin_left = 102.0
@@ -110,16 +111,23 @@ margin_bottom = 175.0
 size_flags_horizontal = 3
 text = "Set Position"
 
-[node name="Frames" type="Label" parent="VBoxContainer"]
+[node name="UpdatePosition" type="Button" parent="VBoxContainer"]
 margin_top = 179.0
 margin_right = 122.0
-margin_bottom = 193.0
+margin_bottom = 199.0
+size_flags_horizontal = 3
+text = "Update Position"
+
+[node name="Frames" type="Label" parent="VBoxContainer"]
+margin_top = 203.0
+margin_right = 122.0
+margin_bottom = 217.0
 text = "Frames:"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 197.0
+margin_top = 221.0
 margin_right = 122.0
-margin_bottom = 447.0
+margin_bottom = 471.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxContainer2"]
 margin_right = 122.0
@@ -135,9 +143,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Apply" type="Button" parent="VBoxContainer"]
-margin_top = 451.0
+margin_top = 475.0
 margin_right = 122.0
-margin_bottom = 471.0
+margin_bottom = 495.0
 custom_colors/font_color = Color( 1, 0.937255, 0, 1 )
 text = "Apply"
 __meta__ = {

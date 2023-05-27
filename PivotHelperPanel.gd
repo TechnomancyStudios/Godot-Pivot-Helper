@@ -12,6 +12,7 @@ onready var sprite_back = $VBoxContainer/SpriteControls2/Back as Button
 onready var sprite_next = $VBoxContainer/SpriteControls2/Next as Button
 onready var sprite_current_frame = $VBoxContainer/SpriteControls2/CurrentFrame as SpinBox
 onready var sprite_set_position = $VBoxContainer/SetPosition as Button
+onready var sprite_update_position = $VBoxContainer/UpdatePosition as Button
 var pivot_points:PivotResource
 var pivot_node:Pivot
 var pivot_sprite:AnimatedSprite
@@ -37,7 +38,8 @@ func _ready():
 	sprite_back.connect("pressed",self,"sprite_last_frame")
 	sprite_next.connect("pressed",self,"sprite_next_frame")
 	sprite_current_frame.connect("value_changed",self,"current_frame_changed")
-	sprite_set_position.connect("pressed",self,"sprite_update_position")
+	sprite_set_position.connect("pressed",self,"sprite_set_position")
+	sprite_update_position.connect("pressed",self,"sprite_update_position")
 	
 	pivot_points = pivot_node.pivot_resource
 	pivot_sprite = pivot_node.animated_sprite
@@ -72,6 +74,7 @@ func refresh_frames():
 		pa.set("pivot_position", p.position)
 		pa.set("pivot_hide", p.hide)
 		pa.set("pivot_node", pivot_node)
+		pa.set("pivot_rot", p.rotation)
 		frames.add_child(pa)
 		count += 1
 
@@ -136,13 +139,31 @@ func sprite_last_frame(update_pos=true):
 	else:
 		print("Sprite does not exist.")
 
+func sprite_set_position():
+	var pos_list = pivot_points.pivot_points[option_button.get_item_text(option_button.selected)]
+	var frame_count = pivot_sprite.frames.get_frame_count(option_button.get_item_text(option_button.selected))
+	
+	pos_list[sprite_current_frame.value].position = pivot_node.position
+	pos_list[sprite_current_frame.value].rotation = pivot_node.rotation_degrees
+	
+	if sprite_current_frame.value < frame_count - 1:
+		frame_count_changed = true
+		sprite_next_frame(false)
+	
+	refresh_frames()
+
 func sprite_update_position():
 	var pos_list = pivot_points.pivot_points[option_button.get_item_text(option_button.selected)]
-	frame_count_changed = true
-	pos_list[sprite_current_frame.value].position = pivot_node.position
-	sprite_next_frame(false)
-	refresh_frames()
+	var frame_count = pivot_sprite.frames.get_frame_count(option_button.get_item_text(option_button.selected))
 	
+	pos_list[sprite_current_frame.value].position = pivot_node.position
+	pos_list[sprite_current_frame.value].rotation = pivot_node.rotation_degrees
+	
+	if sprite_current_frame.value < frame_count - 1:
+		frame_count_changed = true
+		sprite_next_frame()
+	
+	refresh_frames()
 
 func update_current_frame(frame, update_pos=true):
 	sprite_current_frame.value = frame

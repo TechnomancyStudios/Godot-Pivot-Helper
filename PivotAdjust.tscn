@@ -44,20 +44,28 @@ margin_bottom = 40.0
 min_value = -99999.0
 max_value = 99999.0
 
-[node name="Label4" type="Label" parent="."]
+[node name="Label5" type="Label" parent="."]
 margin_left = 203.0
 margin_top = 13.0
-margin_right = 237.0
+margin_right = 228.0
+margin_bottom = 27.0
+text = "Rot:"
+
+[node name="Rot_Value" type="SpinBox" parent="."]
+margin_left = 232.0
+margin_right = 306.0
+margin_bottom = 40.0
+min_value = -360.0
+max_value = 360.0
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 310.0
+margin_top = 13.0
+margin_right = 344.0
 margin_bottom = 27.0
 text = "Hide:"
 
 [node name="Hide" type="CheckBox" parent="."]
-margin_left = 241.0
-margin_right = 265.0
+margin_left = 348.0
+margin_right = 372.0
 margin_bottom = 40.0
-
-[node name="Set" type="Button" parent="."]
-margin_left = 269.0
-margin_right = 301.0
-margin_bottom = 40.0
-text = "Set"
