@@ -1,0 +1,145 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/pivot_helper/PivotHelperPanel.gd" type="Script" id=1]
+
+[node name="PivotHelperPanel" type="PanelContainer"]
+margin_right = 14.0
+margin_bottom = 14.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 129.0
+margin_bottom = 478.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="RichTextLabel" parent="VBoxContainer"]
+margin_right = 122.0
+margin_bottom = 15.0
+bbcode_enabled = true
+bbcode_text = "[rainbow]Pivot Helper[/rainbow]"
+text = "Pivot Helper"
+fit_content_height = true
+
+[node name="Animation" type="Label" parent="VBoxContainer"]
+margin_top = 19.0
+margin_right = 122.0
+margin_bottom = 33.0
+text = "Animation:"
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer"]
+margin_top = 37.0
+margin_right = 122.0
+margin_bottom = 57.0
+
+[node name="AnimationControls" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 61.0
+margin_right = 122.0
+margin_bottom = 81.0
+
+[node name="Create" type="Button" parent="VBoxContainer/AnimationControls"]
+margin_right = 59.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Init"
+
+[node name="Reset" type="Button" parent="VBoxContainer/AnimationControls"]
+margin_left = 63.0
+margin_right = 122.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Reset"
+
+[node name="Animation2" type="Label" parent="VBoxContainer"]
+margin_top = 85.0
+margin_right = 122.0
+margin_bottom = 99.0
+text = "Sprite Controls:"
+
+[node name="SpriteControls" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 103.0
+margin_right = 122.0
+margin_bottom = 123.0
+
+[node name="Play" type="Button" parent="VBoxContainer/SpriteControls"]
+margin_right = 59.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Play"
+
+[node name="Stop" type="Button" parent="VBoxContainer/SpriteControls"]
+margin_left = 63.0
+margin_right = 122.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Stop"
+
+[node name="SpriteControls2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 127.0
+margin_right = 122.0
+margin_bottom = 151.0
+
+[node name="Back" type="Button" parent="VBoxContainer/SpriteControls2"]
+margin_right = 20.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+text = "<"
+
+[node name="CurrentFrame" type="SpinBox" parent="VBoxContainer/SpriteControls2"]
+margin_left = 24.0
+margin_right = 98.0
+margin_bottom = 24.0
+
+[node name="Next" type="Button" parent="VBoxContainer/SpriteControls2"]
+margin_left = 102.0
+margin_right = 122.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+text = ">"
+
+[node name="SetPosition" type="Button" parent="VBoxContainer"]
+margin_top = 155.0
+margin_right = 122.0
+margin_bottom = 175.0
+size_flags_horizontal = 3
+text = "Set Position"
+
+[node name="Frames" type="Label" parent="VBoxContainer"]
+margin_top = 179.0
+margin_right = 122.0
+margin_bottom = 193.0
+text = "Frames:"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 197.0
+margin_right = 122.0
+margin_bottom = 447.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxContainer2"]
+margin_right = 122.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 0, 250 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Frames" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/ScrollContainer"]
+margin_right = 122.0
+margin_bottom = 250.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Apply" type="Button" parent="VBoxContainer"]
+margin_top = 451.0
+margin_right = 122.0
+margin_bottom = 471.0
+custom_colors/font_color = Color( 1, 0.937255, 0, 1 )
+text = "Apply"
+__meta__ = {
+"_edit_use_anchors_": false
+}

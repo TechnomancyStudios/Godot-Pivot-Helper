@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/pivot_helper/PivotAdjust.gd" type="Script" id=1]
+
+[node name="PivotAdjust" type="HBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_top = 13.0
+margin_right = 12.0
+margin_bottom = 27.0
+text = "0:"
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 13.0
+margin_right = 28.0
+margin_bottom = 27.0
+text = "X:"
+
+[node name="X_Value" type="SpinBox" parent="."]
+margin_left = 32.0
+margin_right = 106.0
+margin_bottom = 40.0
+min_value = -99999.0
+max_value = 99999.0
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 110.0
+margin_top = 13.0
+margin_right = 121.0
+margin_bottom = 27.0
+text = "Y:"
+
+[node name="Y_Value" type="SpinBox" parent="."]
+margin_left = 125.0
+margin_right = 199.0
+margin_bottom = 40.0
+min_value = -99999.0
+max_value = 99999.0
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 203.0
+margin_top = 13.0
+margin_right = 237.0
+margin_bottom = 27.0
+text = "Hide:"
+
+[node name="Hide" type="CheckBox" parent="."]
+margin_left = 241.0
+margin_right = 265.0
+margin_bottom = 40.0
+
+[node name="Set" type="Button" parent="."]
+margin_left = 269.0
+margin_right = 301.0
+margin_bottom = 40.0
+text = "Set"
