@@ -93,10 +93,16 @@ func animation_create():
 	refresh_frames()
 
 func animation_reset():
-	var test = {}
-	
-	pivot_points.pivot_points.erase(option_button.get_item_text(option_button.selected))
-	refresh_options()
+	var animation_name = option_button.get_item_text(option_button.selected)
+	pivot_points.pivot_points.erase(animation_name)
+	var frame_count = pivot_sprite.frames.get_frame_count(animation_name)
+	for f in range(frame_count):
+		if pivot_points.pivot_points.has(animation_name):
+			pivot_points.pivot_points[animation_name].append(PivotPointResource.new())
+		else:
+			pivot_points.pivot_points[animation_name] = [PivotPointResource.new()]
+	refresh_frames()
+	update_current_frame(0)
 
 func sprite_play_animation():
 	if pivot_sprite != null:
